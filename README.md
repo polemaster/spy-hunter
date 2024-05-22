@@ -12,6 +12,8 @@ This project was written in C++ with the use of SDL2 library for GUI.
 
 ## Example screen from the game
 
+![image](https://github.com/polemaster/spy-hunter/assets/88908662/f86813ba-8091-4635-8a9b-10372eb3ec63)
+
 ## Installation (on Linux)
 
 Requirements:
