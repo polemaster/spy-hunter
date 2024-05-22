@@ -1,0 +1,27 @@
+1. Using installed SDL (requires root privileges)
+  fedora: sudo dnf install SDL2-devel
+  ubuntu: sudo apt install libsdl2-dev
+  arch: sudo pacman -S sdl2
+  Running:
+  g++ src/*.cpp -lSDL2
+
+2. Using SDL installed locally (requires make)
+  1. Download SDL source code from: https://wiki.libsdl.org/SDL2/SourceCode
+  2. unzip it and cd into it
+  3. mkdir build && cd build
+  4. mkdir ~/sdl
+  5. ../configure --prefix=/home/<user-name>/sdl
+  6. make
+  7. make install
+  8. cd into spy hunter project directory
+    9. cp -r ~/sdl/include/SDL2 .
+    10. cp ~/sdl/lib/libSDL2.a .
+    11. g++ -I. src/*.cpp libSDL2.a
+    or
+    // note: you may want to change #include <SDL2/SDL.h> to #include "SDL.h" if it doesn't work
+    9. g++ src/*.cpp $(~/sdl/bin/sdl2-config --cflags --libs) 
+
+3. Using template given to us during the project
+  1. copy SDL2-2.0.10 directory and libSDL2.a file to spy hunter project directory
+  2. ln -sT SDL2-2.0.10/include SDL2
+  3. g++ -I. src/*.cpp libSDL2.a
